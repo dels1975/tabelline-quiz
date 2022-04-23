@@ -7,62 +7,102 @@
     <title>Tabelline</title>
   </head>
   <body>
-    <span>Risultato: </span><span id="testo"></span>
+    <span>Operazione: </span><span id="m1"></span>
+
+    <span>X </span><span id="m2"></span>
+
+    <span>= </span><span id="r1"></span>
+
+    <span>Risultato b: </span><span id="r2"></span>
+
+    <span>Risultato c: </span><span id="r3"></span>
 
     <button id="go">vai</button>
 
     <script>
       // Costruttore di oggetto
-      function Product(multiplying, multiplier, resultFalse1, resultFalse2) {
+      function Multiplication(
+        multiplying,
+        multiplier,
+        result1,
+        result2,
+        result3
+      ) {
         this.multiplying = multiplying; // moltiplicando: restituisce un mumero da 0 a 8 compresi
         this.multiplier = multiplier; // moltiplicatore: restituisce un mumero da 0 a 10 compresi
 
-        this.resultFalse1 = resultFalse1; // risultatoFalso1: restituisce un mumero da 0 a 80 compresi
-        this.resultFalse2 = resultFalse2; // risultatoFalso2: restituisce un mumero da 0 a 80 compresi
+        this.result1 = result1; // risultato 1
+        this.result2 = result2; // risultato 2
+        this.result3 = result3; // risultato 3
 
+        /*
         this.resultTrue = function () {
           let result = this.multiplying * this.multiplier;
           return result;
         };
+        */
+        // la sintassi di creazione metodo con una arrow function è alternativa alla sintassi commentata sopra
+
+        this.resultTrue = () => this.multiplying * this.multiplier;
       }
 
-      // istanza di un oggetto
-
-      function generator() {
+      function numberGenerator() {
         // genera i numeri casuali fino a quando il prodotto di a*b è diverso sia da c che da d
         let multiplying = Math.floor(Math.random() * 9);
         let multiplier = Math.floor(Math.random() * 11);
         let risultatoVero = multiplying * multiplier;
-        const risultatoFalso = [];
+        const listValue = [];
 
         function generaFalso() {
           candidatoFalso = Math.floor(Math.random() * 81);
           if (candidatoFalso != risultatoVero) {
-            risultatoFalso.push(Math.floor(Math.random() * 81));
+            listValue.push(Math.floor(Math.random() * 81));
           }
-          return risultatoFalso;
         }
 
         do {
+          // console.log(listValue.length);
           generaFalso();
-          console.log(risultatoFalso.length + " / " + risultatoFalso);
-        } while (risultatoFalso.length < 1);
+          // console.log(listValue.length);
+          console.log(listValue);
+        } while (listValue.length < 2);
+
+        listValue.push(risultatoVero);
+        listValue.sort();
+
+        console.log(listValue);
 
         console.log(multiplying + " x " + multiplier + " = " + risultatoVero);
 
-        let operazione = new Product(
+        // istanza dell'oggetto Product
+        let operazione = new Multiplication(
           multiplying, // moltiplicando: restituisce un mumero da 0 a 8 compresi
           multiplier, // moltiplicatore: restituisce un mumero da 0 a 80 compresi
-          Math.floor(Math.random() * 81), // risultatoFalso1: restituisce un mumero da 0 a 80 compresi
-          Math.floor(Math.random() * 81) // risultatoFalso2: restituisce un mumero da 0 a 80 compresi
+          listValue[0],
+          listValue[1],
+          listValue[2]
+
+          // Math.floor(Math.random() * 81), // risultatoFalso1: restituisce un mumero da 0 a 80 compresi
+          // Math.floor(Math.random() * 81) // risultatoFalso2: restituisce un mumero da 0 a 80 compresi
         );
-        const testo = document.getElementById("testo");
-        testo.innerHTML = operazione.resultTrue();
-        console.log(generaFalso());
+
+        const operatorOne = document.getElementById("m1");
+        const operatorTwo = document.getElementById("m2");
+
+        const risultatoUno = document.getElementById("r1");
+        const risultatoDue = document.getElementById("r2");
+        const risultatoTre = document.getElementById("r3");
+
+        operatorOne.innerHTML = operazione.multiplying;
+        operatorTwo.innerHTML = operazione.multiplier;
+
+        risultatoUno.innerHTML = operazione.result1;
+        risultatoDue.innerHTML = operazione.result2;
+        risultatoTre.innerHTML = operazione.result3;
       }
 
       const el = document.querySelector("#go");
-      el.addEventListener("click", generator);
+      el.addEventListener("click", numberGenerator);
     </script>
   </body>
 </html>
