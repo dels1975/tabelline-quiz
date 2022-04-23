@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabelline</title>
+  </head>
+  <body>
+    <span>Risultato: </span><span id="testo"></span>
+
+    <button id="go">vai</button>
+
+    <script>
+      // Costruttore di oggetto
+      function Product(multiplying, multiplier, resultFalse1, resultFalse2) {
+        this.multiplying = multiplying; // moltiplicando: restituisce un mumero da 0 a 8 compresi
+        this.multiplier = multiplier; // moltiplicatore: restituisce un mumero da 0 a 10 compresi
+
+        this.resultFalse1 = resultFalse1; // risultatoFalso1: restituisce un mumero da 0 a 80 compresi
+        this.resultFalse2 = resultFalse2; // risultatoFalso2: restituisce un mumero da 0 a 80 compresi
+
+        this.resultTrue = function () {
+          let result = this.multiplying * this.multiplier;
+          return result;
+        };
+      }
+
+      // istanza di un oggetto
+
+      function generator() {
+        // genera i numeri casuali fino a quando il prodotto di a*b è diverso sia da c che da d
+        let multiplying = Math.floor(Math.random() * 9);
+        let multiplier = Math.floor(Math.random() * 11);
+        let risultatoVero = multiplying * multiplier;
+        const risultatoFalso = [];
+
+        function generaFalso() {
+          candidatoFalso = Math.floor(Math.random() * 81);
+          if (candidatoFalso != risultatoVero) {
+            risultatoFalso.push(Math.floor(Math.random() * 81));
+          }
+          return risultatoFalso;
+        }
+
+        do {
+          generaFalso();
+          console.log(risultatoFalso.length + " / " + risultatoFalso);
+        } while (risultatoFalso.length < 1);
+
+        console.log(multiplying + " x " + multiplier + " = " + risultatoVero);
+
+        let operazione = new Product(
+          multiplying, // moltiplicando: restituisce un mumero da 0 a 8 compresi
+          multiplier, // moltiplicatore: restituisce un mumero da 0 a 80 compresi
+          Math.floor(Math.random() * 81), // risultatoFalso1: restituisce un mumero da 0 a 80 compresi
+          Math.floor(Math.random() * 81) // risultatoFalso2: restituisce un mumero da 0 a 80 compresi
+        );
+        const testo = document.getElementById("testo");
+        testo.innerHTML = operazione.resultTrue();
+        console.log(generaFalso());
+      }
+
+      const el = document.querySelector("#go");
+      el.addEventListener("click", generator);
+    </script>
+  </body>
+</html>
