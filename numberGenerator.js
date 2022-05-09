@@ -1,3 +1,5 @@
+"use strict";
+
 // Costruttore di oggetto
 function Multiplication(multiplying, multiplier, result1, result2, result3) {
   this.multiplying = multiplying; // moltiplicando: restituisce un mumero da 0 a 8 compresi
@@ -26,7 +28,7 @@ function numberGenerator() {
   const listValue = [];
 
   function generaFalso() {
-    candidatoFalso = Math.floor(Math.random() * 81);
+    let candidatoFalso = Math.floor(Math.random() * 81);
     if (candidatoFalso != risultatoVero) {
       listValue.push(Math.floor(Math.random() * 81));
     }
