@@ -17,7 +17,7 @@ function Multiplication(multiplying, multiplier, result1, result2, result3) {
         */
   // la sintassi di creazione metodo con una arrow function è alternativa alla sintassi commentata sopra
 
-  // this.resultTrue = () => this.multiplying * this.multiplier;
+  this.resultTrue = () => this.multiplying * this.multiplier;
 }
 
 function numberGenerator() {
