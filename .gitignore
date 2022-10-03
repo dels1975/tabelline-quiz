@@ -1,0 +1,4 @@
+*.txt
+.vscode/
+node_modules/
+*.pdf
