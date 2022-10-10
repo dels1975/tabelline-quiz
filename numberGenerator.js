@@ -1,5 +1,6 @@
 "use strict";
 
+/*
 // Costruttore di oggetto
 function Multiplication(multiplying, multiplier, result1, result2, result3) {
   this.multiplying = multiplying; // moltiplicando: restituisce un mumero da 0 a 8 compresi
@@ -15,9 +16,31 @@ function Multiplication(multiplying, multiplier, result1, result2, result3) {
           return result;
         };
         */
-  // la sintassi di creazione metodo con una arrow function è alternativa alla sintassi commentata sopra
-
+// la sintassi di creazione metodo con una arrow function è alternativa alla sintassi commentata sopra
+/*
   this.resultTrue = () => this.multiplying * this.multiplier;
+}
+*/
+
+// Costruttore di oggetto
+class Multiplication {
+  constructor(multiplying, multiplier, result1, result2, result3) {
+    this.multiplying = multiplying; // moltiplicando: restituisce un mumero da 0 a 8 compresi
+    this.multiplier = multiplier; // moltiplicatore: restituisce un mumero da 0 a 10 compresi
+
+    this.result1 = result1; // risultato 1
+    this.result2 = result2; // risultato 2
+    this.result3 = result3; // risultato 3
+
+    /*
+          this.resultTrue = function () {
+            let result = this.multiplying * this.multiplier;
+            return result;
+          };
+          */
+    // la sintassi di creazione metodo con una arrow function è alternativa alla sintassi commentata sopra
+    this.resultTrue = () => this.multiplying * this.multiplier;
+  }
 }
 
 function numberGenerator() {
