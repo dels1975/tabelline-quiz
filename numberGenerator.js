@@ -52,7 +52,7 @@ function numberGenerator() {
 
   function generaFalso() {
     let candidatoFalso = Math.floor(Math.random() * 81);
-    if (candidatoFalso != risultatoVero) {
+    if ((candidatoFalso != risultatoVero) & (candidatoFalso != listValue[0])) {
       listValue.push(Math.floor(Math.random() * 81));
     }
   }
