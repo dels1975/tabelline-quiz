@@ -52,8 +52,13 @@ function numberGenerator() {
 
   function generaFalso() {
     let candidatoFalso = Math.floor(Math.random() * 81);
-    if ((candidatoFalso != risultatoVero) & (candidatoFalso != listValue[0])) {
-      listValue.push(Math.floor(Math.random() * 81));
+    // console.log(risultatoVero);
+    if (candidatoFalso != risultatoVero && candidatoFalso != listValue[0]) {
+      console.log(
+        `${candidatoFalso} != da ${risultatoVero}, ${candidatoFalso} != da ${listValue[0]}`
+      );
+      listValue.push(candidatoFalso);
+      console.log(listValue[0]);
     }
   }
 
@@ -67,7 +72,7 @@ function numberGenerator() {
   listValue.push(risultatoVero);
   listValue.sort();
 
-  console.log(listValue);
+  // console.log(listValue);
 
   console.log(multiplying + " x " + multiplier + " = " + risultatoVero);
 
