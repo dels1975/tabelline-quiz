@@ -32,12 +32,11 @@ class Multiplication {
     this.result2 = result2; // risultato 2
     this.result3 = result3; // risultato 3
 
-    /*
-          this.resultTrue = function () {
-            let result = this.multiplying * this.multiplier;
-            return result;
-          };
-          */
+    // this.resultTrue = function () {
+    //   let result = this.multiplying * this.multiplier;
+    //   return result;
+    // };
+
     // la sintassi di creazione metodo con una arrow function è alternativa alla sintassi commentata sopra
     this.resultTrue = () => this.multiplying * this.multiplier;
   }
@@ -91,6 +90,7 @@ function numberGenerator() {
   const risultatoUno = document.getElementById("r1");
   const risultatoDue = document.getElementById("r2");
   const risultatoTre = document.getElementById("r3");
+  const risultatoCalcolo = document.getElementById("r4");
 
   operatorOne.innerHTML = operazione.multiplying;
   operatorTwo.innerHTML = operazione.multiplier;
@@ -98,6 +98,7 @@ function numberGenerator() {
   risultatoUno.innerHTML = operazione.result1;
   risultatoDue.innerHTML = operazione.result2;
   risultatoTre.innerHTML = operazione.result3;
+  risultatoCalcolo.innerHTML = operazione.resultTrue();
 }
 
 const el = document.querySelector("#go");

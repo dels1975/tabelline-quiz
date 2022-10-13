@@ -1,8 +1,7 @@
-"use strict";
-
-// import { numberGenerator } from "./numberGenerator";
+("use strict");
 
 const el2 = document.querySelectorAll(".response");
+const risultatoEsatto = document.getElementById("r4");
 
 /* function risposta() {
   for (let i = 0; i < el2.length; i++) {
@@ -21,9 +20,9 @@ const el2 = document.querySelectorAll(".response");
   for (let i = 0; i < el2.length; i++) {
     el2[i].addEventListener("click", function () {
       let value = i + 1;
-      alert(
-        `hai selezionato la Risposta ${value} con valore = ${el2[i].textContent}`
-      );
+      el2[i].innerText == risultatoEsatto.innerText
+        ? alert(`Hai selezionato la risposta corretta`)
+        : alert(`Hai selezionato la risposta sbagliata`);
     });
   }
 })();
