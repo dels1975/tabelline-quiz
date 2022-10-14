@@ -90,7 +90,7 @@ function numberGenerator() {
   const risultatoUno = document.getElementById("r1");
   const risultatoDue = document.getElementById("r2");
   const risultatoTre = document.getElementById("r3");
-  const risultatoCalcolo = document.getElementById("r4");
+  const risultatoCalcolo = document.getElementById("risultato");
 
   operatorOne.innerHTML = operazione.multiplying;
   operatorTwo.innerHTML = operazione.multiplier;
@@ -98,7 +98,7 @@ function numberGenerator() {
   risultatoUno.innerHTML = operazione.result1;
   risultatoDue.innerHTML = operazione.result2;
   risultatoTre.innerHTML = operazione.result3;
-  risultatoCalcolo.innerHTML = operazione.resultTrue();
+  risultatoCalcolo.value = operazione.resultTrue();
 }
 
 const el = document.querySelector("#go");
