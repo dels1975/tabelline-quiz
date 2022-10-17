@@ -1,5 +1,7 @@
 "use strict";
 
+const conteggio = document.getElementById("conteggio");
+
 /*
 // Costruttore di oggetto
 function Multiplication(multiplying, multiplier, result1, result2, result3) {
