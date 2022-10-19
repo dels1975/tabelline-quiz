@@ -2,6 +2,7 @@
 
 const el2 = document.querySelectorAll(".response");
 const risultatoEsatto = document.getElementById("risultato");
+const contaRispostaEsatta = document.getElementById("contaRispostaEsatta");
 
 const risposta1 = document.getElementById("response1");
 const risposta2 = document.getElementById("response2");
@@ -35,14 +36,27 @@ const risposta10 = document.getElementById("response10");
       //   ? alert(`Hai selezionato la risposta corretta`)
       //   : alert(`Hai selezionato la risposta sbagliata`);
 
-      el2[i].innerText == risultatoEsatto.value
-        ? (risposta1.value = 1)
-        : (risposta1.value = 0);
-      console.log(risposta1.value);
-      conteggio.value < 1
-        ? (conteggio.value = 1)
-        : (conteggio.value = conteggio.value + 1);
-      // console.log(typeof conteggio.value);  è una stringa
+      // el2[i].innerText == risultatoEsatto.value
+      //   ? (risposta1.value = parseInt(contaRispostaEsatta.value) + 1) // + (contaRispostaEsatta.value += 1)
+      //   : (risposta1.value = 0);
+
+      if (el2[i].innerText == risultatoEsatto.value) {
+        // contaRispostaEsatta.value = parseInt(contaRispostaEsatta.value) + 1;
+
+        numberGenerator();
+
+        if (parseInt(conteggio.value) < 9) {
+          conteggio.value = parseInt(conteggio.value) + 1;
+          contaRispostaEsatta.value = parseInt(contaRispostaEsatta.value) + 1;
+          contaRispostaEsatta = 0;
+        } else {
+          conteggio.value = 0;
+          contaRispostaEsatta.value = 0;
+        }
+      } else {
+        conteggio.value = parseInt(conteggio.value) + 1;
+        numberGenerator();
+      }
     });
   }
 })();
