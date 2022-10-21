@@ -101,6 +101,13 @@ function numberGenerator() {
   risultatoDue.innerHTML = operazione.result2;
   risultatoTre.innerHTML = operazione.result3;
   risultatoCalcolo.value = operazione.resultTrue();
+
+  // Visualizza i numeri generati
+  const elResponse = document.querySelectorAll(".response");
+
+  elResponse.forEach(function (element) {
+    element.setAttribute("style", "display:inline");
+  });
 }
 
 const el = document.querySelector("#go");

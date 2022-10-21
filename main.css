@@ -51,4 +51,5 @@ a {
 
 .response {
   cursor: pointer;
+  display: none;
 }
