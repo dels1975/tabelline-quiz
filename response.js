@@ -62,6 +62,8 @@ const contaRispostaEsatta = document.getElementById("contaRispostaEsatta");
       // }
       if (e) {
         // evento generato -> alert("hai cliccato una risposta");
+        const operatorOne = (document.getElementById("m1").innerText = "");
+        const operatorTwo = (document.getElementById("m2").innerText = "");
 
         // elResponse[i].setAttribute is not a function
         for (const i in elResponse) {
