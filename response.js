@@ -4,17 +4,6 @@ const elResponse = document.querySelectorAll(".response");
 const risultatoEsatto = document.getElementById("risultato");
 const contaRispostaEsatta = document.getElementById("contaRispostaEsatta");
 
-// const risposta1 = document.getElementById("response1");
-// const risposta2 = document.getElementById("response2");
-// const risposta3 = document.getElementById("response3");
-// const risposta4 = document.getElementById("response4");
-// const risposta5 = document.getElementById("response5");
-// const risposta6 = document.getElementById("response6");
-// const risposta7 = document.getElementById("response7");
-// const risposta8 = document.getElementById("response8");
-// const risposta9 = document.getElementById("response9");
-// const risposta10 = document.getElementById("response10");
-
 /* function risposta() {
   for (let i = 0; i < elResponse.length; i++) {
     elResponse[i].addEventListener("click", function () {
@@ -64,10 +53,11 @@ const contaRispostaEsatta = document.getElementById("contaRispostaEsatta");
         // evento generato -> alert("hai cliccato una risposta");
         const operatorOne = (document.getElementById("m1").innerText = "");
         const operatorTwo = (document.getElementById("m2").innerText = "");
-
+        const operatorX = (document.getElementById("mX").innerText = "");
+        const operatorEgual = (document.getElementById("=").innerText = "");
         // elResponse[i].setAttribute is not a function
         for (const i in elResponse) {
-          elResponse[i].setAttribute("style", "display:none");
+          elResponse[i].setAttribute("style", "visibility:hidden");
         }
       }
     });

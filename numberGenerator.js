@@ -88,6 +88,8 @@ function numberGenerator() {
 
   const operatorOne = document.getElementById("m1"); // moltiplicando
   const operatorTwo = document.getElementById("m2"); // moltiplicatore
+  const operatorX = (document.getElementById("mX").innerText = "X ");
+  const operatorEgual = (document.getElementById("=").innerText = "=");
 
   const risultatoUno = document.getElementById("r1");
   const risultatoDue = document.getElementById("r2");

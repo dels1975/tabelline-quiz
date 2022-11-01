@@ -17,31 +17,33 @@
     <script defer src="response.js"></script>
   </head>
   <body>
-    <div class="container">
-      <div class="row justify-content-center h1">
-        <div class="col-6">
-          Operazione: <span id="m1"></span> <span>X </span><span id="m2"></span
-          ><span> = </span>
-        </div>
-        <div class="row justify-content-center">
-          <div class="col-2 flex-item response h1">
-            <span id="r1"></span>
-          </div>
-
-          <div class="col-2 flex-item response">
-            <span id="r2"></span>
-          </div>
-
-          <div class="col-2 flex-item response">
-            <span id="r3"></span>
-          </div>
+    <div class="container text-center">
+      <!-- Riga 1 con Calcolo -->
+      <div class="row justify-content-md-center h1">
+        <div class="col-12">
+          Operazione: <span id="m1"></span> <span id="mX"> X </span
+          ><span id="m2"></span><span id="="> = </span>
         </div>
       </div>
 
-      <br /><br /><br />
+      <!-- Riga 2 con Risposte -->
+      <div class="row justify-content-md-center h1">
+        <div class="col-md-1 flex-item h1 response">
+          <span id="r1"></span>
+        </div>
 
-      <div class="row justify-content-md-center">
-        <div class="col-1">
+        <div class="col-md-1 flex-item h1 response">
+          <span id="r2"></span>
+        </div>
+
+        <div class="col-md-1 flex-item h1 response">
+          <span id="r3"></span>
+        </div>
+      </div>
+
+      <!-- Riga 3 con bottone -->
+      <div class="row justify-content-md-center h1">
+        <div>
           <button type="button" class="btn btn-lg btn-success" id="go">
             Genera
           </button>
@@ -49,25 +51,22 @@
       </div>
     </div>
 
-    <input type="hidden" id="risultato" name="risultato" value="0" />
+    <div class="container">
+      <div class="row row col-md-3 col-6">
+        <input type="hidden" id="risultato" name="risultato" />
+      </div>
+      <div class="row row col-md-3 col-6">
+        Conteggio:<input class="col-3" id="conteggio" name="conteggio" />
+      </div>
+      <div class="row row col-md-3 col-6">
+        Risultato esatto:<input
+          class="col-3"
+          id="contaRispostaEsatta"
+          name="contaRispostaEsatta"
+        />
+      </div>
 
-    <input type="number" id="conteggio" name="conteggio" value="0" />
-    <input
-      type="number"
-      id="contaRispostaEsatta"
-      name="contaRispostaEsatta"
-      value="0"
-    />
-
-    <!-- <input type="number" id="response1" name="risposta1" value="" />
-    <input type="number" id="response2" name="risposta2" value="" />
-    <input type="number" id="response3" name="risposta3" value="" />
-    <input type="number" id="response4" name="risposta4" value="" />
-    <input type="number" id="response5" name="risposta5" value="" />
-    <input type="number" id="response6" name="risposta6" value="" />
-    <input type="number" id="response7" name="risposta7" value="" />
-    <input type="number" id="response8" name="risposta8" value="" />
-    <input type="number" id="response9" name="risposta9" value="" />
-    <input type="number" id="response10" name="risposta10" value="" /> -->
+      <br />
+    </div>
   </body>
 </html>

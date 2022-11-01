@@ -1,6 +1,35 @@
-.flex-container {
+.container {
+  /* display: flex;
+  flex-wrap: wrap; */
+  border: 1px solid red;
+}
+
+.row {
+  /* align-items: center; */
+  justify-content: space-between;
+  border: 1px solid red;
+}
+
+.flex-item {
+  background: tomato;
+  color: white;
+  border-radius: 150px;
+  margin: 1%;
+}
+
+.response {
+  cursor: pointer;
+  display: hidden;
+}
+
+input {
+  text-align: center;
+  justify-content: flex-start;
+}
+
+/* .flex-container { */
   /* We first create a flex layout context */
-  display: flex;
+  /* display: flex; */
 
   /* Then we define the flow direction 
      and if we allow the items to wrap 
@@ -8,17 +37,11 @@
    * flex-direction: row;
    * flex-wrap: wrap;
    */
-  flex-flow: row wrap;
+  /* flex-flow: row wrap; */
 
   /* Then we define how is distributed the remaining space */
-  justify-content: center;
   
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-  
-.flex-item {
+/* .flex-item {
   background: tomato;
   padding: 5px;
   width: 150px;
@@ -27,29 +50,29 @@
   border-radius: 150px;
   line-height: 150px;
   color: white;
-  font-weight: bold;
+  font-weight: bold; */
   /* font-size: 3em; */
-  text-align: center;
-}
+  /* text-align: center;
+} */
 
-a {
+/* a {
   display: inline-flexbox;
   text-decoration: none;
   height: inherit;
-}
+} */
 
 /* rimuove l'alone intorno al pulsante dopo averci cliccato e ripristina il colore iniziale del pulsante*/
-.btn:focus {
+/* .btn:focus {
   outline: none;
   box-shadow: none;
   background-color: #198754;
-}
+} */
 
-.btn:hover {
+/* .btn:hover {
   background-color: #157347;
-}
+} */
 
-.response {
+/* .response {
   cursor: pointer;
   display: none;
-}
+} */
