@@ -110,6 +110,10 @@ function numberGenerator() {
   elResponse.forEach(function (element) {
     element.setAttribute("style", "display:inline");
   });
+
+  // Disattiva il pulsante "Genera"
+  const bottone = document.getElementById("go");
+  bottone.setAttribute("disabled", "");
 }
 
 const el = document.querySelector("#go");

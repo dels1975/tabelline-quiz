@@ -58,6 +58,10 @@ const contaRispostaEsatta = document.getElementById("contaRispostaEsatta");
         // elResponse[i].setAttribute is not a function
         for (const i in elResponse) {
           elResponse[i].setAttribute("style", "visibility:hidden");
+
+          // Riattiva il pulsante "Genera"
+          const bottone = document.getElementById("go");
+          bottone.removeAttribute("disabled", "");
         }
       }
     });
